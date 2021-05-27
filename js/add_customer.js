@@ -26,7 +26,7 @@ window.addEventListener('load', (e) => {
             alert("message");
             return false;
             }
-        }
+        };
 
     $('custForm').addEventListener('submit', (e) => {
         e.preventDefault();
