@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Customer</title>
+    <script src="js/add_customer.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="m-3">
+    <h2>Enter Your Delivery Information</h2>
+    <form id="custForm">
+        <label for="name">Full Name</label><br>
+        <input type="text" required id="name"><br><br>
+ 
+        <label for="address_type">Address Type</label><br>
+        <select id="address_type" required>
+            <option value="house">House</option>
+            <option value="apartment">Apartment</option>
+            <option value="business">Business</option>
+            <option value="campus">Campus</option>
+            <option value="hotel">Hotel</option>
+            <option value="dorm">Dorm</option>
+            <option value="other">Other</option>
+        </select><br>
+
+        <label for="address">Street Address</label><br>
+        <input type="text" required id="address"><br><br>
+
+        <label for="city">City</label><br>
+        <input type="text" required id="city"><br><br>
+
+        <label for="state">State</label><br>
+        <input type="text" required id="state"><br><br>
+
+        <label for="zip">Zip code</label><br>
+        <input type="text" required id="zip"><br><br>
+
+        <label for="phone">Phone Number</label><br>
+        <input type="text" required id="phone"><br><br>
+    
+        <label for="email">Email</label><br>
+        <input type="email" required id="email"><br><br>
+
+        <input type="submit" class="btn btn-warning" name="submit" id="submit" value="Add Delivery Information">
+        <input type="button" class="btn btn-warning" name="cancel" id="cancel" value="Cancel">        
+    </form>   
+</body>
+</html>
