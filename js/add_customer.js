@@ -122,6 +122,7 @@ window.addEventListener('load', (e) => {
             entryIsValid = false;
         }
         validateEmail (email);
+        
         let parent = window.opener.document.getElementById('loginDetails');
         parent.innerHTML = `${name}<br>${address_type}<br>${address}<br>${city}<br>${state}<br>${zip}<br>${phone}<br>${email}`;
         document.querySelector('#custForm').reset();
