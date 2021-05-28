@@ -84,45 +84,41 @@ window.addEventListener('load', (e) => {
         let phone = `Phone: ${$('phone').value}`;
         let email = `Email: ${$('email').value}`;
         if (validateEmail(name) === false) {
+            document.getElementById('name').focus();
             entryIsValid = false;
         }
-        validateName (name);
 
         if (validateAddress(address) === false) {
+            document.getElementById('address').focus();
             entryIsValid = false;
         }
-        validateAddress (address);
 
         if (validateCity(city) === false) {
+            document.getElementById('city').focus();
             entryIsValid = false;
         }
-        validateCity(city);
 
         if (validateState(state) === false) {
+            document.getElementById('state').focus();
             entryIsValid = false;
         }
-        validateState(state);
 
         if (validateZip(zip) === false) {
+            document.getElementById('zip').focus();
             entryIsValid = false;
         }
-        validateZip(zip);
 
         if (validatePhone(phone) === false) {
+            document.getElementById('phone').focus();
             entryIsValid = false;
         }
-        validatePhone(phone);
+      
 
         if (validateEmail(email) === false) {
+            document.getElementById('email').focus();
             entryIsValid = false;
         }
-        validateEmail (email);
-
-        if (validateEmail(email) === false) {
-            entryIsValid = false;
-        }
-        validateEmail (email);
-        
+      
         let parent = window.opener.document.getElementById('loginDetails');
         parent.innerHTML = `${name}<br>${address_type}<br>${address}<br>${city}<br>${state}<br>${zip}<br>${phone}<br>${email}`;
         document.querySelector('#custForm').reset();
