@@ -11,22 +11,28 @@ window.addEventListener('load', (e) => {
     $('cancel').addEventListener('click', () => {
         window.close();
     });
-    function ValidateEmail(email) {  
+    function validateEmail(email) {  
         if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(custForm.email.value)) {
-        return (true)
+        return true;
         }
         alert("You have entered an invalid email address!")
-        return (false)
+        return false
         }
-    function phonenumber(inputtxt) {
-        let phoneno = /^\d{10}$/;
-        if((inputtxt.value.match(phoneno))) {
+    function validatePhone(phone) {
+        if (/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/.test(custForm.phone.value)) {
             return true;
-            } else {
-            alert("message");
-            return false;
             }
-        };
+            alert("You have entered an invalid phone number!")
+            return false
+            }
+    function validateZip(zip) {
+        if (/^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i.test(custForm.phone.value)) {
+            return true;
+            }
+            alert("You have entered an invalid phone number!")
+            return  false
+            }
+      
 
     $('custForm').addEventListener('submit', (e) => {
         e.preventDefault();
@@ -39,10 +45,10 @@ window.addEventListener('load', (e) => {
         let zip = `Zip code: ${$('zip').value}`;
         let phone = `Phone Number: ${$('phone').value}`;
         let email = `Email: ${$('email').value}`;
-
+        validateEmail (email);
         let parent = window.opener.document.getElementById('loginDetails');
         parent.innerHTML = `${name}<br>${address_type}<br>${address}<br>${city}<br>${state}<br>${zip}<br>${phone}<br>${email}`;
-
+    
         window.close();
     });
 });
