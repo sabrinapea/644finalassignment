@@ -38,7 +38,7 @@ window.addEventListener('load', (e) => {
         }
     }
     function validateState(state) {
-        if (/^[A-Za-z]{2,}$/i.test(custForm.state.value)) {
+        if (/^[A-Za-z]{2}$/i.test(custForm.state.value)) {
             return true;
         } else {
             alert("You entered an invalid state format!");
@@ -62,7 +62,7 @@ window.addEventListener('load', (e) => {
         }
     }
     function validateZip(zip) {
-        if (/^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i.test(custForm.zip.value)) {
+        if (/(^\d{5}$)|(^\d{5}-\d{4}$)/.test(custForm.zip.value)) {
             return true;
         } else {
             alert("You entered an invalid zip format!");
@@ -121,9 +121,10 @@ window.addEventListener('load', (e) => {
       
         let parent = window.opener.document.getElementById('loginDetails');
         parent.innerHTML = `${name}<br>${address_type}<br>${address}<br>${city}<br>${state}<br>${zip}<br>${phone}<br>${email}`;
-        document.querySelector('#custForm').reset();
+        // document.querySelector('#custForm').reset();
 
-    
+        if (entryIsValid) {
         window.close();
+        }
     });
 });
