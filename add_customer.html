@@ -10,10 +10,34 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="m-3">
+    <nav class="navbar sticky-top navbar-expand lg navbar-dark bg-dark">
+        
+        <a class="navbar-brand" href="#">
+            <img src="/images/pizza_cat_ico.png" width="55" height="55" alt="">Maki Maki Pizza
+        </a>
+        <div class="collapse navbar-collapse ml-auto" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="buildpizza.html">Order Now</a>
+              </li>
+             
+            </ul>
+        </div>
+            
+    </nav>
     <h2>Enter Your Delivery Information</h2>
     <form id="custForm">
         <label for="name">Full Name</label><br>
-        <input type="text" required id="name"><br><br>
+        <input type="text" required id="name" placeholder="First and Last Name"><br><br>
  
         <label for="address_type">Address Type</label><br>
         <select id="address_type" required>
@@ -24,7 +48,8 @@
             <option value="hotel">Hotel</option>
             <option value="dorm">Dorm</option>
             <option value="other">Other</option>
-                <!-- <input type="text" placeholder="enter other address type"> -->
+            <option value="other"></option>
+               
         </select><br>
 
         <label for="address">Street Address</label><br>
