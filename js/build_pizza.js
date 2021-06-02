@@ -11,7 +11,7 @@ const $ = (id) => {
 
 // if user select dough and size, else message must select both before proceeding. 
 const validateRadios = () => {
-   if (document.getElementById("size").selectedIndex === 0) {
+   if (document.getElementById("selectdough").selectedIndex === 0) {
             alert("you reached here and must select a size.");
             return false;
         }

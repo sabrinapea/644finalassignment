@@ -3,6 +3,8 @@ window.addEventListener('load', (e) => {
     let height = 700;
     window.resizeTo(width, height);
     window.moveTo(((window.screen.width - width) / 2), ((window.screen.height - height) / 2));
+    
+    document.querySelector('#name').focus();
 
     const $ = (id) => {
         return document.getElementById(id);
@@ -12,6 +14,7 @@ window.addEventListener('load', (e) => {
         window.close();
     });
     
+
     function validateName(name) {
         if (/^[a-zA-Z]+ [a-zA-Z]+$/.test(custForm.name.value)) {
             return true;
@@ -69,8 +72,6 @@ window.addEventListener('load', (e) => {
             return  false;
         }
     }
-    
-
     $('custForm').addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -83,6 +84,7 @@ window.addEventListener('load', (e) => {
         let zip = `Zip code: ${$('zip').value}`;
         let phone = `Phone: ${$('phone').value}`;
         let email = `Email: ${$('email').value}`;
+
         if (validateEmail(name) === false) {
             document.getElementById('name').focus();
             entryIsValid = false;
