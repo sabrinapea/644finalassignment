@@ -8,6 +8,16 @@ const $ = (id) => {
 //     NYSTYLE: "nystyle",
 //     GLUTEN: "gluten",
 // }
+
+// if user select dough and size, else message must select both before proceeding. 
+const validateRadios = () => {
+   if (document.getElementById("size").selectedIndex === 0) {
+            alert("you reached here and must select a size.");
+            return false;
+        }
+    }
+
+
 let doughBtns = document.getElementsByClassName('dough');
 
 function buildPizzaSizeDropDown(e) {
@@ -45,4 +55,4 @@ function buildPizzaSizeDropDown(e) {
 for (let doughBtn of doughBtns) {
     doughBtn.addEventListener('click', buildPizzaSizeDropDown);
 }
-// if no dough was clicked but cheese or sauce was selected, then alert use they must select dough first
+
