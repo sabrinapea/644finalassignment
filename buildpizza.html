@@ -42,112 +42,128 @@
                   </li>
                  
                 </ul>
-            </div>
-                
+            </div>               
         </nav>
-        <h1>Start making your custom Maki Pizza</h1><br>
-        <h2>Select Your Dough</h2>
-        <div id="selectdough">
-            <div class="form-check">
-                <input class="form-check-input dough" id="handtossed" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                Hand Tossed
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input dough" id="thincrust" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label " for="flexRadioDefault2">
-                    Thin Crust
-                </label>
-            </div> 
-            <div  class="form-check">
-                <input class="form-check-input dough" id="nystyle" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
-                <label class="form-check-label" for="flexRadioDefault3">
-                    New York Style
-                </label>
-            </div> 
-            <div  class="form-check">
-                <input class="form-check-input dough" id="gluten" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
-                <label class="form-check-label" for="flexRadioDefault4">
-                    Gluten Free
-                </label><br><br>
-            </div>
+        
+        <div class="container-fluid">
+            <h2>Start making your custom Maki Pizza</h2>        
         </div>
+                               
+                    <h2>Select Your Dough</h2>
+                <div id="selectdough"class="col" >
+                    <div class="form-check">
+                        <input class="form-check-input dough" id="handtossed" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                        Hand Tossed
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input dough" id="thincrust" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label " for="flexRadioDefault2">
+                            Thin Crust
+                        </label>
+                    </div> 
+                    <div  class="form-check">
+                        <input class="form-check-input dough" id="nystyle" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                        <label class="form-check-label" for="flexRadioDefault3">
+                            New York Style
+                        </label>
+                    </div> 
+                    <div  class="form-check">
+                        <input class="form-check-input dough" id="gluten" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+                        <label class="form-check-label" for="flexRadioDefault4">
+                            Gluten Free
+                        </label><br><br>
+                    </div>
+            </div>
+            </div>
         
-        <h2>Select Your Pizza Size</h2>
-        <select id="size" class="form-select" aria-label="Default select example">      
-            
-        </select><br><br>
-        
-        <h2>Select Your Cheese</h2>
-        <div id="selectsize">
-            <select id="cheese" class="form-select" aria-label="Default select example">      
-                <option selected="selected">Your Cheese Options</option>
-                <option value="1">Light: no charge</option>
-                <option value="2">Normal: no charge</option>
-                <option value="3">Extra: +$2.99</option>
-                <option value="4">Double: +$3.99</option>
+        </div>
+        <div class="container-fluid row no-gutters">
+            <div class="col-12 col-sm-6 col-md-8">
+                <h2>Select Your Pizza Size</h2></div>
+                <div id="runningtotal" class="col-6 col-md-4"> <p> </p></div>
+            <select id="size" class="form-select" aria-label="Default select example">      
+                
             </select><br><br>
         </div>
+          
+            <h2>Select Your Cheese</h2>
+            <div id="selectsize">
+                <select id="cheese" class="form-select" aria-label="Default select example">      
+                    <option selected="selected">Your Cheese Options</option>
+                    <option value="0">Light: no charge</option>
+                    <option value="0">Normal: no charge</option>
+                    <option value="2.99">Extra: +$2.99</option>
+                    <option value="3.99">Double: +$3.99</option>
+                </select><br><br>
+            </div>
+        </div>
 
-        <h2>Select Your Sauce</h2>
-        <select id="sauce" class="form-select" aria-label="Default select example">      
-            <option selected>Your Sauce Options</option>
-            <option value="1">Regular Tomato: no charge</option>
-            <option value="2">Hearty Tomato: +$.99</option>
-            <option value="3">BBQ Sauce: +$1.99</option>
-        </select><br><br>
+            <h2>Select Your Sauce</h2>
+            <div id="selectsauce">
+                <select id="sauce" class="form-select" aria-label="Default select example">      
+                    <option selected>Your Sauce Options</option>
+                    <option value="0">Regular Tomato: no charge</option>
+                    <option value=".99">Hearty Tomato: +$.99</option>
+                    <option value="1.99">BBQ Sauce: +$1.99</option>
+                </select><br><br>
+            </div>
 
-        <h2>Select Your Extra Toppings</h2>
-        <h4>(Each topping is $.99 extra)</h4>
-        <div id="toppings" class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">Pepperoni</label>
+            <h2>Select Your Extra Toppings</h2>
+            <h4>(Each topping is $.99 extra)</h4>
+            <div id="selecttoppings">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Pepperoni</label>
+                </div>          
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Sausage</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Ham</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">Bacon</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox5" value="option5">
+                    <label class="form-check-label" for="inlineCheckbox5">Salami</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox6" value="option6">
+                    <label class="form-check-label" for="inlineCheckbox6">Peppers</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox7" value="option7">
+                    <label class="form-check-label" for="inlineCheckbox7">Olives</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox8" value="option8">
+                    <label class="form-check-label" for="inlineCheckbox8">Jalapenos</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox9" value="option9">
+                    <label class="form-check-label" for="inlineCheckbox9">Mushrooms</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox10" value="option10">
+                    <label class="form-check-label" for="inlineCheckbox10">Pineapple</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input toppingcheckbox" type="checkbox" id="inlineCheckbox11" value="option11">
+                    <label class="form-check-label" for="inlineCheckbox11">Onion</label>
+                </div><br><br>
+            </div>
         </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" for="inlineCheckbox2">Sausage</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-            <label class="form-check-label" for="inlineCheckbox3">Ham</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-            <label class="form-check-label" for="inlineCheckbox4">Bacon</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-            <label class="form-check-label" for="inlineCheckbox5">Salami</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-            <label class="form-check-label" for="inlineCheckbox6">Peppers</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
-            <label class="form-check-label" for="inlineCheckbox7">Olives</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
-            <label class="form-check-label" for="inlineCheckbox8">Jalapenos</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9">
-            <label class="form-check-label" for="inlineCheckbox9">Mushrooms</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option10">
-            <label class="form-check-label" for="inlineCheckbox10">Pineapple</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="option11">
-            <label class="form-check-label" for="inlineCheckbox11">Onion</label>
-        </div><br><br>
 
         <button type="button" class="btn btn-warning btn-lg" id="submitOrder">Finished Building Pizza</button>
         <button type="button" class="btn btn-warning btn-lg" id="cancelOrder">Cancel</button>
         <script src="js/build_pizza.js"></script>
+
     </body>
 </container>
 

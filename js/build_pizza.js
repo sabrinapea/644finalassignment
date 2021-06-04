@@ -10,13 +10,30 @@ const $ = (id) => {
 // }
 
 // if user select dough and size, else message must select both before proceeding. 
-const validateRadios = () => {
-   if (document.getElementById("selectdough").selectedIndex === 1) {
-            alert("you reached here and must select a size.");
-            return false;
-        }
-    }
+// const validateRadios = () => {
+//    if (document.getElementById("selectdough").selectedIndex === 1) {
+//             alert("you reached here and must select a size.");
+//             return false;
+//         }
+//     }
+let selectdough = document.querySelector('#selectdough');
+let selectsize = document.querySelector('#selectsize');
+let selectsauce = document.querySelector('#selectsauce');
+let selecttoppings = document.querySelector('#selecttoppings');
 
+selectdough.addEventListener('click', (e) => {
+    console.log('hello');
+    
+    if(e.target.className.contains('dough')) {
+        if(e.target.getElementById.contains('size')) {
+        console.log('you select both dough and size, you may proceed');
+        } else {
+            console.log('you must select both dough and size, try again.');
+        }
+    } else {
+        console.log('wrong');
+    }
+});
 
 let doughBtns = document.getElementsByClassName('dough');
 
