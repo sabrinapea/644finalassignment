@@ -16,24 +16,35 @@ const $ = (id) => {
 //             return false;
 //         }
 //     }
-let selectdough = document.querySelector('#selectdough');
-let selectsize = document.querySelector('#selectsize');
-let selectsauce = document.querySelector('#selectsauce');
-let selecttoppings = document.querySelector('#selecttoppings');
+let userPizza = document.querySelector('#buildingpizza');
+let userDough = document.querySelector('#selectdough');
+let userSize = document.querySelector('#selectsize');
+let userSauce = document.querySelector('#selectsauce');
+let userToppings = document.querySelector('#selecttoppings');
+let total = 0;
 
-selectdough.addEventListener('click', (e) => {
+// validate dough and size are clicked before proceeding
+userPizza.addEventListener('click', (e) => {
     console.log('hello');
-    
-    if(e.target.className.contains('dough')) {
-        if(e.target.getElementById.contains('size')) {
-        console.log('you select both dough and size, you may proceed');
-        } else {
-            console.log('you must select both dough and size, try again.');
-        }
-    } else {
-        console.log('wrong');
-    }
+    if (document.getElementById('selectdough').addEventListener('click', () => {
+        if (document.getElementById('size').addEventListener('click', () => {
+            alert('you may proceed');
+        }));
+    }));
 });
+    
+//     // if(e.target.getElementsByClassName.contains('dough')) {
+//     //     if(e.target.getElementById.contains('size')) {
+//     //     console.log('you select both dough and size, you may proceed');
+//     //     // proceed to select cheese option
+//     //     } else {
+//     //         console.log('you must select both dough and size, try again.');
+//     //     }
+//     // } else {
+//     //     console.log('wrong');
+        
+//     }
+// });
 
 let doughBtns = document.getElementsByClassName('dough');
 
@@ -72,4 +83,12 @@ function buildPizzaSizeDropDown(e) {
 for (let doughBtn of doughBtns) {
     doughBtn.addEventListener('click', buildPizzaSizeDropDown);
 }
+
+window.addEventListener('load', () => {
+    document.getElementById('cancelOrder').addEventListener('click', () => {
+        alert("Do you want to change your order?");
+        document.querySelector('#buildingpizza').reset();
+        document.querySelector('#handtossed').focus();      
+    });
+});
 

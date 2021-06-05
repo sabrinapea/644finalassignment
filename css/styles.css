@@ -8,6 +8,6 @@ form {width: 100%; background: #cfcccc; padding: 20px; border: 3px solid rgb(238
     padding: 20px; border: 3px solid rgb(238, 198, 105);
 
 }
-p {margin-bottom: 30px; margin-bottom: 10px; background: #cfcccc; 
-    padding: 20px; border: 3px solid rgb(238, 198, 105); font-size: 19px}
+#runningtotal p {margin-bottom: 30px; margin-bottom: 10px; background: #cfcccc; 
+    padding: 20px; border: 3px solid rgb(238, 198, 105); font-size: 19px; visibility: hidden;}
 
