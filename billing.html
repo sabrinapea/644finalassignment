@@ -14,7 +14,84 @@
     
 </head>
 <body>
-    <h3>Enter Your Billing Information</h3>
+    <nav class="navbar sticky-top navbar-expand lg navbar-dark bg-dark">
+        
+        <a class="navbar-brand" href="#">
+            <img src="/images/pizza_cat_ico.png" width="55" height="55" alt="">Maki Maki Pizza
+        </a>
+        <div class="collapse navbar-collapse ml-auto" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Order Now</a>
+              </li>
+             
+            </ul>
+        </div>               
+    </nav>
+   
+    <div class="col-lg-8 col-md-12">
+        <div id="main" class="card card-body">
+            <h2 class="title mb-4">Enter Your billing information <small><output id="empCount"></output></small></h2>
+            <form id="billingForm">
+                <label for="name">Full Name</label><br>
+                <input type="text" required id="name" placeholder="First and Last Name"autofocus><br><br>
+         
+                <label for="address_type">Address Type</label><br>
+                <select id="address_type" required>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="business">Business</option>
+                    <option value="campus">Campus</option>
+                    <option value="hotel">Hotel</option>
+                    <option value="dorm">Dorm</option>
+                    <option value="other">Other</option>
+                    <option value="other"></option>
+                       
+                </select><br>
+        
+                <label for="address">Street Address</label><br>
+                <input type="text" id="address"><br><br>
+        
+                <label for="city">City</label><br>
+                <input type="text" id="city"><br><br>
+        
+                <label for="state">State</label><br>
+                <input type="text" id="state"><br><br>
+        
+                <label for="zip">Zip code</label><br>
+                <input type="text" id="zip"><br><br>
+               
+                
+                <input type="checkbox" id="myCheck">
+                <label for="sameas">Same as delivery information</label><br><br>
+
+                <label for="creditcard">Credit Card Number</label><br>
+                <input type="text" id="creditcard"><br><br>
+
+                <label for="cvc">CVC</label><br>
+                <input type="text" id="cvc" autofocus><br><br>
+        
+                <select id="expiration" class="form-select" aria-label="Default select example">      
+                    <option selected="selected">Expiration date</option>
+                    <option value="0">Light: no charge</option>
+                    <option value="0">Normal: no charge</option>
+                    <option value="2.99">Extra: +$2.99</option>
+                    <option value="3.99">Double: +$3.99</option>
+                </select><br><br>
+                <input type="submit" class="btn btn-warning" name="submit" id="submit" value="Submit Your Billing Information">
+                <input type="button" class="btn btn-warning" name="cancel" id="cancel" value="Cancel">        
+            </form> 
+        </div>
+    </div>
     
 </body>
 </html>
