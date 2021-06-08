@@ -130,14 +130,13 @@ window.addEventListener('load', () => {
 
         }
         document.getElementById('size').innerHTML = '<option value="notvalid" selected>You must select your dough before proceeding</option>';
-        
+
         userCheese.style.visibility="hidden";
         userSauce.style.visibility="hidden";
         userToppings.style.visibility="hidden";
         userButton.style.visibility="hidden";
         document.getElementById('runningtotal').style.visibility="hidden";
         
-
         document.getElementById('selectdough').focus();      
     });
 });
