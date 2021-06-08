@@ -8,9 +8,10 @@ form {width: 100%; background: #cfcccc; padding: 20px; border: 3px solid rgb(238
     padding: 20px; border: 3px solid rgb(238, 198, 105);
 
 }
-#runningtotal p {margin-bottom: 30px; margin-bottom: 10px; background: #cfcccc; 
-    padding: 20px; border: 3px solid rgb(238, 198, 105); font-size: 19px}
+#runningtotal {margin-bottom: 30px; margin-bottom: 10px; background: #cfcccc; 
+    padding: 20px; border: 3px solid rgb(238, 198, 105); font-size: 19px; visibility: hidden;}
 
 #selectcheese {visibility: hidden;}
 #selectsauce, #selecttoppings, #buttons {visibility: hidden;}
 
+.sticky {top:25%; right:5%; position:fixed;}

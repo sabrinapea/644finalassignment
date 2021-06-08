@@ -24,6 +24,7 @@
     <body id="buildpizza" class="m=5">
         <nav class="navbar sticky-top navbar-expand lg navbar-dark bg-dark">
         
+
             <a class="navbar-brand" href="#">
                 <img src="/images/pizza_cat_ico.png" width="55" height="55" alt="">Maki Maki Pizza
             </a>
@@ -45,6 +46,10 @@
                 </ul>
             </div>               
         </nav>
+
+        <div id="runningtotal" class=" col-6 col-md-4 sticky-top sticky"> 
+            $0.00
+        </div>
         
         <div class="container-fluid">            
             
@@ -77,22 +82,19 @@
                         </label><br><br>
                     </div>
                 </div>
-                <div id="selectsize" class="container-fluid row no-gutters">
-                    <div class="col-12 col-sm-6 col-md-8">
-                        <h2>Select Your Pizza Size<output id="subtotal"></output></h2>
-                    </div>
-                    <div id="runningtotal" class="col-6 col-md-4"> 
-                        <p>total </p>
-                    </div>
-                        <select id="size" class="form-select" aria-label="Default select example">                    
-                        </select><br><br>
+                <div id="selectsize" >
+                        <h2>Select Your Pizza Size</h2>
+                    
+                    <select id="size" class="form-select" aria-label="Default select example">    
+                        <option value="notvalid" selected>You must select your dough before proceeding</option>                   
+                    </select><br><br>
                 </div>
 
                
                 <div id="selectcheese">
                     <h2>Select Your Cheese</h2>
                     <select id="cheese" class="form-select" aria-label="Default select example">      
-                        <option selected="selected">Your Cheese Options</option>
+                        <option value="notvalid" selected="selected">Your Cheese Options</option>
                         <option value="0">Light: no charge</option>
                         <option value="0">Normal: no charge</option>
                         <option value="2.99">Extra: +$2.99</option>
@@ -104,7 +106,7 @@
                 <div id="selectsauce">
                     <h2>Select Your Sauce</h2>
                     <select id="sauce" class="form-select" aria-label="Default select example">      
-                        <option selected>Your Sauce Options</option>
+                        <option value="notvalid" selected>Your Sauce Options</option>
                         <option value="0">Regular Tomato: no charge</option>
                         <option value=".99">Hearty Tomato: +$.99</option>
                         <option value="1.99">BBQ Sauce: +$1.99</option>

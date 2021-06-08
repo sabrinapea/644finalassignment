@@ -2,20 +2,7 @@ const $ = (id) => {
     return document.getElementById(id);
 
 };
-// const doughType = {
-//     HANDTOSSED: "handtossed",
-//     THINCRUST: "thincrust",
-//     NYSTYLE: "nystyle",
-//     GLUTEN: "gluten",
-// }
 
-// if user select dough and size, else message must select both before proceeding. 
-// const validateRadios = () => {
-//    if (document.getElementById("selectdough").selectedIndex === 1) {
-//             alert("you reached here and must select a size.");
-//             return false;
-//         }
-//     }
 let userCheese = document.querySelector('#selectcheese');
 let userDough = document.querySelector('#selectdough');
 let userSize = document.querySelector('#selectsize');
@@ -44,39 +31,45 @@ let validateDoughAndSize = function (e) {
         userSauce.style.visibility="visible";
         userToppings.style.visibility="visible";
         userButton.style.visibility="visible";
-    }
-
-    
-    
-    // console.log(document.getElementById('size').options[document.getElementById('size').selectedIndex].value);
-
-    
+        document.getElementById('runningtotal').style.visibility="visible";
+    }  
 }
 userDough.addEventListener('click', validateDoughAndSize);
 userSize.addEventListener('click', validateDoughAndSize);
 
-// userPizza.addEventListener('click', (e) => {
-//     console.log('pie');
-//     if (document.getElementById('selectdough').addEventListener('click', () => {
-//         console.log('hello');
-//         if (document.getElementById('selectsize').addEventListener('click', () => {
-//             alert('you may proceed');
-//         }));
-//     }));
-// });
-    
-//     // if(e.target.getElementsByClassName.contains('dough')) {
-//     //     if(e.target.getElementById.contains('size')) {
-//     //     console.log('you select both dough and size, you may proceed');
-//     //     // proceed to select cheese option
-//     //     } else {
-//     //         console.log('you must select both dough and size, try again.');
-//     //     }
-//     // } else {
-//     //     console.log('wrong');
-        
-//     }
-// });
+let calculateTotal = function (e) {
+    total = 0;
+
+    // Get added price from pizza size
+    let sizeAmount = parseFloat(document.getElementById('size').options[document.getElementById('size').selectedIndex].value);
+    total += isNaN(sizeAmount) ? 0 : sizeAmount; 
+
+    // Get added price from cheese type
+    let cheeseAmount = parseFloat(document.getElementById('cheese').options[document.getElementById('cheese').selectedIndex].value);
+    total += isNaN(cheeseAmount) ? 0 : cheeseAmount; 
+
+    // Get added price from sauce type
+    let sauceAmount = parseFloat(document.getElementById('sauce').options[document.getElementById('sauce').selectedIndex].value);
+    total += isNaN(sauceAmount) ? 0 : sauceAmount; 
+
+    // Get the pricing from the added toppings
+    let toppingAmount = 0;
+    let checkboxes = document.getElementsByClassName('toppingcheckbox');
+    for (let checkbox of checkboxes) {
+        if (checkbox.checked) {
+            toppingAmount += 0.99;
+        }
+    } 
+    total += toppingAmount;
+
+    document.getElementById('runningtotal').innerHTML = "$" + total.toFixed(2);
+   
+}
+userCheese.addEventListener('click', calculateTotal);
+userSauce.addEventListener('click', calculateTotal);
+userToppings.addEventListener('click', calculateTotal);
+userDough.addEventListener('click', calculateTotal);
+userSize.addEventListener('click', calculateTotal);
 
 let doughBtns = document.getElementsByClassName('dough');
 
@@ -112,6 +105,7 @@ function buildPizzaSizeDropDown(e) {
             break;
     }
 }
+
 for (let doughBtn of doughBtns) {
     doughBtn.addEventListener('click', buildPizzaSizeDropDown);
 }
@@ -119,8 +113,32 @@ for (let doughBtn of doughBtns) {
 window.addEventListener('load', () => {
     document.getElementById('cancelOrder').addEventListener('click', () => {
         alert("Do you want to change your order?");
-        document.querySelector('#buildingpizza').reset();
-        document.querySelector('#handtossed').focus();      
+        total = 0;
+        document.getElementById('runningtotal').innerHTML = "Your Total is: $" + total.toFixed(2);
+       
+       
+        document.getElementById('size').selectedIndex = 0;
+        // options[document.getElementById('size').selectedIndex].reset();
+        document.getElementById('cheese').selectedIndex = 0;
+        document.getElementById('sauce').selectedIndex = 0;
+        
+        let checkboxes = document.getElementsByClassName('toppingcheckbox');
+        for (let checkbox of checkboxes) {
+            if (checkbox.checked) {
+                checkbox.checked = false;
+            } 
+
+        }
+        document.getElementById('size').innerHTML = '<option value="notvalid" selected>You must select your dough before proceeding</option>';
+        
+        userCheese.style.visibility="hidden";
+        userSauce.style.visibility="hidden";
+        userToppings.style.visibility="hidden";
+        userButton.style.visibility="hidden";
+        document.getElementById('runningtotal').style.visibility="hidden";
+        
+
+        document.getElementById('selectdough').focus();      
     });
 });
 
