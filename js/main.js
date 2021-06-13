@@ -9,9 +9,3 @@ window.addEventListener('load', () => {
         window.open('billing.html','','width=800,height=600');
     });
 });
-// window.addEventListener('load', () => {
-//     document.getElementById('cancelOrder').addEventListener('click', () => {
-//         alert("Are you sure you want to cancel your order?");
-//         // window.open('billing.html','','width=800,height=600');
-//     });
-// });

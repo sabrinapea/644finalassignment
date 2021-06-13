@@ -76,14 +76,24 @@ window.addEventListener('load', (e) => {
         e.preventDefault();
 
         let entryIsValid = true;
-        let name = `Name: ${$('name').value}`;
-        let address_type = `Type: ${$('address_type').value}`;
-        let address = `Address: ${$('address').value}`;
-        let city = `City: ${$('city').value}`;
-        let state = `State: ${$('state').value}`;
-        let zip = `Zip code: ${$('zip').value}`;
-        let phone = `Phone: ${$('phone').value}`;
-        let email = `Email: ${$('email').value}`;
+        
+        let name = $('name').value;
+        let address_type = $('address_type').value;
+        let address = $('address').value;
+        let city = $('city').value;
+        let state = $('state').value;
+        let zip = $('zip').value;
+        let phone = $('phone').value;
+        let email = $('email').value;
+
+        let name_formattedString = `Name: ${name}`;
+        let address_type_formattedString = `Type: ${address_type}`;
+        let address_formattedString = `Address: ${address}`;
+        let city_formattedString = `City: ${city}`;
+        let state_formattedString = `State: ${state}`;
+        let zip_formattedString = `Zip code: ${zip}`;
+        let phone_formattedString = `Phone: ${phone}`;
+        let email_formattedString = `Email: ${email}`;
 
         if (validateName(name) === false) {
             document.getElementById('name').focus();
@@ -118,40 +128,18 @@ window.addEventListener('load', (e) => {
         if (validateEmail(email) === false) {
             document.getElementById('email').focus();
             entryIsValid = false;
-        }
-      
-        let parent = window.opener.document.getElementById('loginDetails');
-        parent.innerHTML = `${name}<br>${address_type}<br>${address}<br>${city}<br>${state}<br>${zip}<br>${phone}<br>${email}`;
+        } 
+
+        // let parent = window.opener.document.getElementById('loginDetails');
+        // parent.innerHTML = `${name}<br>${address_type}<br>${address}<br>${city}<br>${state}<br>${zip}<br>${phone}<br>${email}`;
 
         if (entryIsValid) {
-        window.close();
+            let arrCust = [name, address_type, address, city, state, zip, phone, email];
+            localStorage.setItem('custForm', JSON.stringify(arrCust));
+
+            window.close();
         }
     });
 
-    // Check if storage object exist when page loads
-    if (localStorage.getItem('custForm') !== null) {
-        arrCust = JSON.parse(localStorage.getItem('custForm'));
-    }
-    let custInfo = document.querySelector('#custForm');
-
-    localStorage.setItem('custForm', JSON.stringify(arrCust));
-
 });
-function addDeliveryInfo(e) {
-    if (myCheck.addEventListener('click', () => {
-        let userName = document.querySelector('#name').value;
-        let userAddressType = document.querySelector('#address_type').value;
-        let userAddress = document.querySelector('#address').value;
-        let userCity = document.querySelector('#city').value;
-        let userState = document.querySelector('#state').value;
-        let userZip = document.querySelector('#zip').value;
 
-        name.appendChild(document.createTextNode(userName));
-        address_type.appendChild(document.createTextNode(userAddressType));
-        address.appendChild(document.createTextNode(userAddress));
-        city.appendChild(document.createTextNode(userCity));
-        state.appendChild(document.createTextNode(userState));
-        zip.appendChild(document.createTextNode(userZip));
-    }
-   
-};
