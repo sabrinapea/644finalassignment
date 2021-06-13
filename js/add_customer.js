@@ -130,9 +130,6 @@ window.addEventListener('load', (e) => {
             entryIsValid = false;
         } 
 
-        // let parent = window.opener.document.getElementById('loginDetails');
-        // parent.innerHTML = `${name}<br>${address_type}<br>${address}<br>${city}<br>${state}<br>${zip}<br>${phone}<br>${email}`;
-
         if (entryIsValid) {
             let arrCust = [name, address_type, address, city, state, zip, phone, email];
             localStorage.setItem('custForm', JSON.stringify(arrCust));
