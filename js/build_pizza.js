@@ -62,7 +62,7 @@ let calculateTotal = function (e) {
     } 
     total += toppingAmount;
 
-    document.getElementById('runningtotal').innerHTML = "$" + total.toFixed(2);
+    document.getElementById('runningtotal').innerHTML = "Your Maki Pizza total is $" + total.toFixed(2);
    
 }
 userCheese.addEventListener('click', calculateTotal);
@@ -70,6 +70,7 @@ userSauce.addEventListener('click', calculateTotal);
 userToppings.addEventListener('click', calculateTotal);
 userDough.addEventListener('click', calculateTotal);
 userSize.addEventListener('click', calculateTotal);
+
 
 let doughBtns = document.getElementsByClassName('dough');
 
@@ -140,4 +141,5 @@ window.addEventListener('load', () => {
         document.getElementById('selectdough').focus();      
     });
 });
+
 

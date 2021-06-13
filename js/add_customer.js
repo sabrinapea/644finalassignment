@@ -1,5 +1,5 @@
 window.addEventListener('load', (e) => {
-    let width = 800;
+    let width = 875;
     let height = 700;
     window.resizeTo(width, height);
     window.moveTo(((window.screen.width - width) / 2), ((window.screen.height - height) / 2));
@@ -11,10 +11,10 @@ window.addEventListener('load', (e) => {
     };
 
     $('cancel').addEventListener('click', () => {
+        alert('You need to complete your delivery information before placing your order. Are you sure you want to cancel?');
         window.close();
     });
     
-
     function validateName(name) {
         if (/^[a-zA-Z]+ [a-zA-Z]+$/.test(custForm.name.value)) {
             return true;
@@ -85,11 +85,11 @@ window.addEventListener('load', (e) => {
         let phone = `Phone: ${$('phone').value}`;
         let email = `Email: ${$('email').value}`;
 
-        if (validateEmail(name) === false) {
+        if (validateName(name) === false) {
             document.getElementById('name').focus();
             entryIsValid = false;
         }
-
+        
         if (validateAddress(address) === false) {
             document.getElementById('address').focus();
             entryIsValid = false;
@@ -115,7 +115,6 @@ window.addEventListener('load', (e) => {
             entryIsValid = false;
         }
       
-
         if (validateEmail(email) === false) {
             document.getElementById('email').focus();
             entryIsValid = false;
@@ -123,10 +122,36 @@ window.addEventListener('load', (e) => {
       
         let parent = window.opener.document.getElementById('loginDetails');
         parent.innerHTML = `${name}<br>${address_type}<br>${address}<br>${city}<br>${state}<br>${zip}<br>${phone}<br>${email}`;
-        // document.querySelector('#custForm').reset();
 
         if (entryIsValid) {
         window.close();
         }
     });
+
+    // Check if storage object exist when page loads
+    if (localStorage.getItem('custForm') !== null) {
+        arrCust = JSON.parse(localStorage.getItem('custForm'));
+    }
+    let custInfo = document.querySelector('#custForm');
+
+    localStorage.setItem('custForm', JSON.stringify(arrCust));
+
 });
+function addDeliveryInfo(e) {
+    if (myCheck.addEventListener('click', () => {
+        let userName = document.querySelector('#name').value;
+        let userAddressType = document.querySelector('#address_type').value;
+        let userAddress = document.querySelector('#address').value;
+        let userCity = document.querySelector('#city').value;
+        let userState = document.querySelector('#state').value;
+        let userZip = document.querySelector('#zip').value;
+
+        name.appendChild(document.createTextNode(userName));
+        address_type.appendChild(document.createTextNode(userAddressType));
+        address.appendChild(document.createTextNode(userAddress));
+        city.appendChild(document.createTextNode(userCity));
+        state.appendChild(document.createTextNode(userState));
+        zip.appendChild(document.createTextNode(userZip));
+    }
+   
+};
